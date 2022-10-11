@@ -40,11 +40,14 @@ class NumbersViewModelTest : BaseTest() {
 
         viewModel =
             NumbersViewModel(
-                TestDispatchersList(),
+                HandleNumbersRequest.Base(
+                    TestDispatchersList(),
+                    communications,
+                    NumbersResultMapper(communications, NumberUiMapper())
+                ),
                 manageResources,
                 communications,
-                interactor,
-                NumbersResultMapper(communications, NumberUiMapper())
+                interactor
             )
     }
 
