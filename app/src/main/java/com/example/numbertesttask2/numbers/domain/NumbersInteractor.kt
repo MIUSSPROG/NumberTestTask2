@@ -7,4 +7,5 @@ interface NumbersInteractor {
     suspend fun factAboutNumber(number: String): NumbersResult
 
     suspend fun factAboutRandomNumber(): NumbersResult
+
 }
