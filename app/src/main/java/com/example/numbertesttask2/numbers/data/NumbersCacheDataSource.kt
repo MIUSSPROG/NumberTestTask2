@@ -6,7 +6,7 @@ interface NumbersCacheDataSource : FetchNumber {
 
     suspend fun contains(number: String): Boolean
 
-    suspend fun saveNumberFact(numberData: NumberData) // todo saveNumber
+    suspend fun saveNumberFact(numberData: NumberData) // todo saveNumber rename
 }
 
 interface FetchNumber{
