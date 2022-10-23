@@ -2,16 +2,7 @@ package com.example.numbertesttask2.main
 
 import android.app.Application
 import com.example.numbertesttask2.BuildConfig
-import com.example.numbertesttask2.numbers.data.CloudModule
-import com.example.numbertesttask2.numbers.data.NumbersCloudDataSource
-import com.example.numbertesttask2.numbers.data.NumbersService
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
+import com.example.numbertesttask2.numbers.data.cloud.CloudModule
 
 class NumbersApp : Application() {
 

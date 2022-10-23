@@ -1,4 +1,6 @@
-package com.example.numbertesttask2.numbers.data
+package com.example.numbertesttask2.numbers.data.cache
+
+import com.example.numbertesttask2.numbers.data.NumberData
 
 interface NumbersCacheDataSource : FetchNumber {
 

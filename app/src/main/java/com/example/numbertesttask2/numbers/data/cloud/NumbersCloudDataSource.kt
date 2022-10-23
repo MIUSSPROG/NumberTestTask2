@@ -1,6 +1,7 @@
-package com.example.numbertesttask2.numbers.data
+package com.example.numbertesttask2.numbers.data.cloud
 
-import java.net.UnknownHostException
+import com.example.numbertesttask2.numbers.data.cache.FetchNumber
+import com.example.numbertesttask2.numbers.data.NumberData
 
 interface NumbersCloudDataSource : FetchNumber {
 

@@ -1,4 +1,4 @@
-package com.example.numbertesttask2.numbers.data
+package com.example.numbertesttask2.numbers.data.cloud
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
