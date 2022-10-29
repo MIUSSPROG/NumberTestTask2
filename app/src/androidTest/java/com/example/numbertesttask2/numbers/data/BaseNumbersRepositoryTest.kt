@@ -197,7 +197,7 @@ class BaseNumbersRepositoryTest {
         }
 
         override suspend fun contains(number: String): Boolean{
-            val result = data.find{ it.matches(number)} != null
+            val result = data.find{ it.map(NumberData.Mapper.MatchesId(number))} != null
             containsCalledList.add(result)
             return result
         }
@@ -207,7 +207,7 @@ class BaseNumbersRepositoryTest {
             return data[0]
         }
 
-        override suspend fun saveNumberFact(numberData: NumberData) {
+        override suspend fun saveNumber(numberData: NumberData) {
             saveNumberFactCalledCount++
             data.add(numberData)
         }

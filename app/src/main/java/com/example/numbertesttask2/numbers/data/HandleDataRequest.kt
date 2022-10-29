@@ -16,7 +16,7 @@ interface HandleDataRequest{
         override suspend fun handle(block: suspend () -> NumberData): NumberFact {
             return try {
                 val result = block.invoke()
-                cacheDataSource.saveNumberFact(result)
+                cacheDataSource.saveNumber(result)
                 result.map(mapperToDomain)
             }catch (e: Exception) {
                 throw handleError.handle(e)
