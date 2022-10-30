@@ -28,19 +28,20 @@
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_margin="@dimen/margin_small"
         android:hint="@string/input_a_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText"
+            android:id="@+id/inputEditText"
             android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/getFactButton"
+        android:id="@+id/factButton"
         android:text="@string/get_fact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +49,7 @@
         android:layout_margin="@dimen/margin_small"/>
 
     <Button
-        android:id="@+id/getRandomFactButton"
+        android:id="@+id/randomFactButton"
         android:text="@string/get_random_fact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,6 +57,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historyRecyclerView"
+        tools:listitem="@layout/number_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>

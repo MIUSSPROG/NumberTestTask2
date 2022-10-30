@@ -1,28 +1,26 @@
 package com.example.numbertesttask2.numbers.presentation
 
-import com.example.numbertesttask2.numbers.domain.NumberFact
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
-sealed class UiState{
+sealed class UiState {
 
-//    interface Mapper<T> {
-//        fun map(message: String): T
-//    }
-//
-//    abstract fun <T> map(mapper: Mapper<T>): T
-//
-//    class Success: UiState(){
-//        override fun <T> map(mapper: Mapper<T>): T = mapper.map("")
-//    }
-//
-//    class Error(private val message: String): UiState(){
-//        override fun <T> map(mapper: Mapper<T>): T = mapper.map(message)
-//    }
+    abstract fun apply(inputLayout: TextInputLayout, textInputEditText: TextInputEditText)
 
-    class Success: UiState(){
-        override fun equals(other: Any?): Boolean {
-            return if (other is Success) true else super.equals(other)
+    class Success : UiState() {
+        override fun apply(inputLayout: TextInputLayout, textInputEditText: TextInputEditText) {
+            textInputEditText.setText("")
         }
     }
 
-    data class Error(private val message: String): UiState(){}
+    abstract class AbstractError(private val message: String, private val errorEnabled: Boolean): UiState(){
+        override fun apply(inputLayout: TextInputLayout, textInputEditText: TextInputEditText) = with(inputLayout) {
+            isErrorEnabled = errorEnabled
+            error = message
+        }
+    }
+
+    data class ShowError(private val text: String) : AbstractError(text, true)
+
+    class ClearError: AbstractError("", false)
 }
